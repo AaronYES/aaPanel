@@ -12,7 +12,12 @@ green(){
 yellow(){
     echo -e "\033[33m\033[01m$1\033[0m"
 }
-
+blue(){
+    echo -e "\033[34m\033[01m$1\033[0m"
+}
+purple(){
+    echo -e "\033[35m\033[01m$1\033[0m"
+}
 
 # 下载aapanel面板
 function aapanel-install(){
@@ -46,7 +51,6 @@ blue "降级成功."
 # 菜单
 function start_menu(){
     clear
-    blue "aaPanel 降级"
     purple "https://github.com/AaronYES/aapanel"
     yellow " =================================================="
     green " 1. CentOS/Debian/Ubuntu 安装 aaPanel"

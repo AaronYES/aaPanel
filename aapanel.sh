@@ -71,7 +71,7 @@ red "卸载aaPanel成功."
 
 # 汉化 sinicization
 function sinicization(){
-wget -O "/root/aapanel-zh-CN.tar.gz" "https://github.com/AaronYES/aapanel/releases/download/1.1/aapanel-zh-CN.tar.gz"
+wget -O "/root/aapanel-zh-CN.tar.gz" "https://ghproxy.com/https://github.com/AaronYES/aapanel/releases/download/1.1/aapanel-zh-CN.tar.gz"
 tar -zxvf aapanel-zh-CN.tar.gz
 mv /root/server/panel/BTpanel/static/language/English/* /www/server/panel/BTPanel/static/language/English/
 mv /root/server/panel/config/menu.json /www/server/panel/config/

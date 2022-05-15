@@ -48,14 +48,6 @@ bash "/root/panel/downgrade.sh"
 blue "降级成功."
 }
 
-## 开启 BBR FQ
-function bbr-fq{
-echo "net.core.default_qdisc=fq" >> /etc/sysctl.conf
-echo "net.ipv4.tcp_congestion_control=bbr" >> /etc/sysctl.conf
-sysctl -p
-blue "你可以执行 lsmod | grep bbr 查看是否成功开启"
-}
-
 # 菜单
 function start_menu(){
     clear
@@ -66,8 +58,6 @@ function start_menu(){
     yellow " --------------------------------------------------"
     green " 2. 降级 6.8.23 版本 aaPanel(官网)"
     green " 3. 降级 6.8.23 版本 aaPanel(GitHub仓库)"
-    yellow " --------------------------------------------------"
-    green " 4. 开启 BBR FQ"
     yellow " --------------------------------------------------"
     green " 0. 退出脚本"
     echo
@@ -81,9 +71,6 @@ function start_menu(){
         ;;
         3 )
            downgrade-github
-        ;;
-        4 )
-           bbr-fq
         ;;
         0 )
             exit 1

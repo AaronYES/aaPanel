@@ -22,7 +22,7 @@ purple(){
 # 下载aapanel面板
 function aapanel-install(){
 wget -O "/root/aapanel-install.sh" "http://www.aapanel.com/script/install_6.0_en.sh"
-blue "下载完成,正在安装官网原版."
+red "下载完成,正在安装官网原版."
 bash "/root/aapanel-install.sh"
 }
 
@@ -34,7 +34,7 @@ unzip LinuxPanel_EN-6.8.23.zip
 cd /root/panel
 wget -O "/root/panel/downgrade.sh" "https://ghproxy.com/https://raw.githubusercontent.com/AaronYES/aapanel/main/downgrade.sh" 
 bash "/root/panel/downgrade.sh"
-blue "降级成功."
+red "降级成功."
 }
 
 # 降级aapanel GitHub下载 (最后一个无广告版本)
@@ -45,25 +45,34 @@ unzip LinuxPanel_EN-6.8.23.zip
 cd /root/panel
 wget -O "/root/panel/downgrade.sh" "https://ghproxy.com/https://raw.githubusercontent.com/AaronYES/aapanel/main/downgrade.sh" 
 bash "/root/panel/downgrade.sh"
-blue "降级成功."
+red "降级成功."
+}
+
+# aapanel 开心
+function aapanel-happy(){
+sed -i 's|"endtime": -1|"endtime": 999999999999|g' /www/server/panel/data/plugin.json
+sed -i 's|"pro": -1|"pro": 0|g' /www/server/panel/data/plugin.json
+red "好开心 ٩(ˊᗜˋ*)و."
 }
 
 ## 清理垃圾
 function clean-up-trash(){
 rm LinuxPanel_EN-6.8.23.zip aapanel-install.sh panel/ -rf
-blue "清理成功."
-blue "如果想删除此脚本 请执行 rm aapanel.sh -rf ."
+red "清理成功."
+red "如果想删除此脚本 请执行 rm aapanel.sh -rf ."
 }
 
 # 菜单
 function start_menu(){
     clear
+    purple " aaPanel 小助手"
     purple " https://github.com/AaronYES/aapanel"
     yellow " =================================================="
     green " 1. CentOS/Debian/Ubuntu 安装 aaPanel"
     yellow " --------------------------------------------------"
     green " 2. 降级 6.8.23 版本 aaPanel(官网)"
     green " 3. 降级 6.8.23 版本 aaPanel(GitHub仓库)"
+    green " 4. 开心一下٩(ˊᗜˋ*)و"
     yellow " =================================================="
     green " 9. 清理脚本产生垃圾文件"
     green " 0. 退出脚本"
@@ -78,6 +87,9 @@ function start_menu(){
         ;;
         3 )
            downgrade-github
+        ;;
+        4 )
+           aapanel-happy
         ;;
         9 )
            clean-up-trash

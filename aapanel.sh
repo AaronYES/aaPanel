@@ -62,17 +62,27 @@ red "清理成功."
 red "如果想删除此脚本 请执行 rm aapanel.sh -rf ."
 }
 
-# 卸载aaPanel
+# 卸载 aaPanel
 function uninstall(){
 wget -O "/root/bt-uninstall.sh" "http://download.bt.cn/install/bt-uninstall.sh"
 bash "/root/bt-uninstall.sh"
 red "卸载aaPanel成功."
 }
 
+# 汉化 sinicization
+function sinicization(){
+wget -O "/root/aapanel-zh-CN.tar.gz" "https://github.com/AaronYES/aapanel/releases/download/1.1/aapanel-zh-CN.tar.gz"
+tar -zxvf aapanel-zh-CN.tar.gz
+mv /root/server/panel/BTpanel/static/language/English/* /www/server/panel/BTPanel/static/language/English/
+mv /root/server/panel/config/menu.json /www/server/panel/config/
+rm rm /root/server/ -rf
+red "汉化aaPanel成功."
+}
+
 # 菜单
 function start_menu(){
     clear
-    purple " 感谢使用aaPanel小助手,好用请Star."
+    purple " 感谢使用aaPanel小助手."
     purple " https://github.com/AaronYES/aapanel"
     yellow " =================================================="
     green " 1. CentOS/Debian/Ubuntu 安装 aaPanel"
@@ -80,6 +90,7 @@ function start_menu(){
     green " 2. 降级 6.8.23 版本 aaPanel(官网)"
     green " 3. 降级 6.8.23 版本 aaPanel(GitHub仓库)"
     green " 4. 开心一下٩(ˊᗜˋ*)و"
+    green " 5. 汉化 aaPanel"
     yellow " =================================================="
     green " 8. 卸载 aaPanel"
     green " 9. 清理脚本产生垃圾文件"
@@ -98,6 +109,9 @@ function start_menu(){
         ;;
         4 )
            aapanel-happy
+        ;;
+        5 )
+           sinicization
         ;;
         8 )
            uninstall

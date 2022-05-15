@@ -51,8 +51,8 @@ blue "降级成功."
 # 菜单
 function start_menu(){
     clear
-    blue "aaPanel 面板工具箱"
-    purple "练手脚本 方便自己使用"
+    blue "aaPanel 降级"
+    purple "https://github.com/AaronYES/aapanel"
     yellow " =================================================="
     green " 1. CentOS/Debian/Ubuntu 安装 aaPanel"
     yellow " --------------------------------------------------"

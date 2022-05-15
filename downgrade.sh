@@ -3,7 +3,7 @@ PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
 export PATH
 LANG=en_US.UTF-8
 
-# aapanel离线升级脚本
+# aapanel降级脚本
 
 panel_path='/www/server/panel'
 

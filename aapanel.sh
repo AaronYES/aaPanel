@@ -59,7 +59,7 @@ red "好开心 ٩(ˊᗜˋ*)و."
 function clean-up-trash(){
 rm LinuxPanel_EN-6.8.23.zip aapanel-zh-CN.tar.gz aapanel-install.sh bt-uninstall.sh panel/ -rf
 red "清理成功."
-red "如果想删除此脚本 请执行 rm aapanel.sh -rf ."
+red "如果想删除此脚本 请执行 rm aapanel.sh -rf "
 }
 
 # 卸载 aaPanel

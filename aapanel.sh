@@ -51,9 +51,10 @@ blue "降级成功."
 ## 清理垃圾
 function clean-up-trash(){
 rm LinuxPanel_EN-6.8.23.zip aapanel-install.sh panel/ -rf
-}
 blue "清理成功."
 blue "如果想删除此脚本 请执行 rm aapanel.sh -rf ."
+}
+
 # 菜单
 function start_menu(){
     clear

@@ -91,10 +91,11 @@ function start_menu(){
     green " 3. 降级 6.8.23 版本 aaPanel(GitHub仓库)"
     green " 4. 开心一下٩(ˊᗜˋ*)و"
     green " 5. 汉化 aaPanel"
-    yellow " =================================================="
+    yellow " --------------------------------------------------"
     green " 8. 卸载 aaPanel"
     green " 9. 清理脚本产生垃圾文件"
     green " 0. 退出脚本"
+
     echo
     read -p "请输入数字:" menuNumberInput
     case "$menuNumberInput" in

@@ -48,6 +48,11 @@ bash "/root/panel/downgrade.sh"
 blue "降级成功."
 }
 
+## 清理垃圾
+function clean-up-trash(){
+rm LinuxPanel_EN-6.8.23.zip aapanel-install.sh panel/ -rf
+}
+
 # 菜单
 function start_menu(){
     clear
@@ -58,6 +63,7 @@ function start_menu(){
     green " 2. 降级 6.8.23 版本 aaPanel(官网)"
     green " 3. 降级 6.8.23 版本 aaPanel(GitHub仓库)"
     yellow " =================================================="
+    green " 9. 清理脚本产生垃圾文件"
     green " 0. 退出脚本"
     echo
     read -p "请输入数字:" menuNumberInput
@@ -70,6 +76,9 @@ function start_menu(){
         ;;
         3 )
            downgrade-github
+        ;;
+        9 )
+           clean-up-trash
         ;;
         0 )
             exit 1

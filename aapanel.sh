@@ -21,18 +21,39 @@ purple(){
 
 # 下载aapanel面板
 function aapanel-install(){
-wget -O "/root/aapanel-install.sh" http://www.aapanel.com/script/install_6.0_en.sh
+wget -O "/root/aapanel-install.sh" "http://www.aapanel.com/script/install_6.0_en.sh"
 blue "下载完成,正在安装官网原版."
 bash "/root/aapanel-install.sh"
 }
 
-# 降级aapanel(最后一个无广告版本)
+# 降级aapanel 官网下载(最后一个无广告版本)
 function downgrade-official(){
-wget -O "/root/LinuxPanel_EN-6.8.23.zip" http://node.aapanel.com/install/update/LinuxPanel_EN-6.8.23.zip
+wget -O "/root/LinuxPanel_EN-6.8.23.zip" "http://node.aapanel.com/install/update/LinuxPanel_EN-6.8.23.zip"
 blue "下载完成,正在降级."
 unzip LinuxPanel_EN-6.8.23.zip
 cd /root/panel
+wget -O "/root/panel/downgrade.sh" "https://ghproxy.com/https://raw.githubusercontent.com/AaronYES/aapanel/main/downgrade.sh" 
+bash "/root/panel/downgrade.sh"
+blue "降级成功."
+}
 
+# 降级aapanel GitHub下载 (最后一个无广告版本)
+function downgrade-github(){
+wget -O "/root/LinuxPanel_EN-6.8.23.zip" "https://ghproxy.com/https://github.com/AaronYES/aapanel/releases/download/1.0/LinuxPanel_EN-6.8.23.zip"
+blue "下载完成,正在降级."
+unzip LinuxPanel_EN-6.8.23.zip
+cd /root/panel
+wget -O "/root/panel/downgrade.sh" "https://ghproxy.com/https://raw.githubusercontent.com/AaronYES/aapanel/main/downgrade.sh" 
+bash "/root/panel/downgrade.sh"
+blue "降级成功."
+}
+
+## 开启 BBR FQ
+function bbr-fq{
+echo "net.core.default_qdisc=fq" >> /etc/sysctl.conf
+echo "net.ipv4.tcp_congestion_control=bbr" >> /etc/sysctl.conf
+sysctl -p
+blue "你可以执行 lsmod | grep bbr 查看是否成功开启"
 }
 
 # 菜单
@@ -46,6 +67,8 @@ function start_menu(){
     green " 2. 降级 6.8.23 版本 aaPanel(官网)"
     green " 3. 降级 6.8.23 版本 aaPanel(GitHub仓库)"
     yellow " --------------------------------------------------"
+    green " 4. 开启 BBR FQ"
+    yellow " --------------------------------------------------"
     green " 0. 退出脚本"
     echo
     read -p "请输入数字:" menuNumberInput
@@ -53,6 +76,15 @@ function start_menu(){
         1 )
            aapanel-install
 	    ;;
+        2 )
+           downgrade-official
+        ;;
+        3 )
+           downgrade-github
+        ;;
+        4 )
+           bbr-fq
+        ;;
         0 )
             exit 1
         ;;

@@ -52,6 +52,7 @@ red "降级成功."
 function aapanel-happy(){
 sed -i 's|"endtime": -1|"endtime": 999999999999|g' /www/server/panel/data/plugin.json
 sed -i 's|"pro": -1|"pro": 0|g' /www/server/panel/data/plugin.json
+red "如果报错提示没有找到目录请登陆面板点击一下商店重新运行此条即可"
 red "好开心 ٩(ˊᗜˋ*)و."
 }
 

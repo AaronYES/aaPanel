@@ -10,3 +10,4 @@ wget -O aapanel.sh https://raw.githubusercontent.com/AaronYES/aapanel/main/aapan
 ```
 wget -O aapanel.sh https://ghproxy.com/https://raw.githubusercontent.com/AaronYES/aapanel/main/aapanel.sh && chmod +x aapanel.sh && clear && ./aapanel.sh
 ```
+![bash](https://ghproxy.com/https://raw.githubusercontent.com/AaronYES/aapanel/main/bash.png)

@@ -55,17 +55,24 @@ sed -i 's|"pro": -1|"pro": 0|g' /www/server/panel/data/plugin.json
 red "好开心 ٩(ˊᗜˋ*)و."
 }
 
-## 清理垃圾
+# 清理垃圾
 function clean-up-trash(){
-rm LinuxPanel_EN-6.8.23.zip aapanel-install.sh panel/ -rf
+rm LinuxPanel_EN-6.8.23.zip aapanel-install.sh bt-uninstall.sh panel/ -rf
 red "清理成功."
 red "如果想删除此脚本 请执行 rm aapanel.sh -rf ."
+}
+
+# 卸载aaPanel
+function uninstall(){
+wget -O "/root/bt-uninstall.sh" "http://download.bt.cn/install/bt-uninstall.sh"
+bash "/root/bt-uninstall.sh"
+red "卸载aaPanel成功."
 }
 
 # 菜单
 function start_menu(){
     clear
-    purple " aaPanel 小助手"
+    purple " 感谢使用aaPanel小助手,好用请Star."
     purple " https://github.com/AaronYES/aapanel"
     yellow " =================================================="
     green " 1. CentOS/Debian/Ubuntu 安装 aaPanel"
@@ -74,6 +81,7 @@ function start_menu(){
     green " 3. 降级 6.8.23 版本 aaPanel(GitHub仓库)"
     green " 4. 开心一下٩(ˊᗜˋ*)و"
     yellow " =================================================="
+    green " 8. 卸载 aaPanel"
     green " 9. 清理脚本产生垃圾文件"
     green " 0. 退出脚本"
     echo
@@ -90,6 +98,9 @@ function start_menu(){
         ;;
         4 )
            aapanel-happy
+        ;;
+        8 )
+           uninstall
         ;;
         9 )
            clean-up-trash

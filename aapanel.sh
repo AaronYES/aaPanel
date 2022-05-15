@@ -77,6 +77,7 @@ tar -zxvf aapanel-zh-CN.tar.gz
 mv /root/server/panel/BTpanel/static/language/English/* /www/server/panel/BTPanel/static/language/English/
 mv /root/server/panel/config/menu.json /www/server/panel/config/
 rm rm /root/server/ -rf
+/etc/init.d/bt restart
 red "汉化aaPanel成功."
 }
 

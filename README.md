@@ -2,7 +2,11 @@
 
 ## 使用方法
 #### 国外VPS
-<pre>wget -O aapanel.sh https://raw.githubusercontent.com/AaronYES/aapanel/main/aapanel.sh && chmod +x aapanel.sh && clear && ./aapanel.sh<pre>
+```
+wget -O aapanel.sh https://raw.githubusercontent.com/AaronYES/aapanel/main/aapanel.sh && chmod +x aapanel.sh && clear && ./aapanel.sh
+```
 
 #### 国内VPS
-<pre>wget -O aapanel.sh https://ghproxy.com/https://raw.githubusercontent.com/AaronYES/aapanel/main/aapanel.sh && chmod +x aapanel.sh && clear && ./aapanel.sh<pre>
+```
+wget -O aapanel.sh https://ghproxy.com/https://raw.githubusercontent.com/AaronYES/aapanel/main/aapanel.sh && chmod +x aapanel.sh && clear && ./aapanel.sh
+```

@@ -46,6 +46,7 @@ cd /root/panel
 wget -O "/root/panel/downgrade.sh" "https://ghproxy.com/https://raw.githubusercontent.com/AaronYES/aapanel/main/downgrade.sh" 
 bash "/root/panel/downgrade.sh"
 red "降级成功."
+rm panel/ -rf
 }
 
 # aapanel 开心

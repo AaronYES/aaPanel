@@ -35,6 +35,7 @@ cd /root/panel
 wget -O "/root/panel/downgrade.sh" "https://ghproxy.com/https://raw.githubusercontent.com/AaronYES/aapanel/main/downgrade.sh" 
 bash "/root/panel/downgrade.sh"
 red "降级成功."
+rm /root/panel/ -rf
 }
 
 # 降级aapanel GitHub下载 (最后一个无广告版本)
@@ -46,7 +47,7 @@ cd /root/panel
 wget -O "/root/panel/downgrade.sh" "https://ghproxy.com/https://raw.githubusercontent.com/AaronYES/aapanel/main/downgrade.sh" 
 bash "/root/panel/downgrade.sh"
 red "降级成功."
-rm panel/ -rf
+rm /root/panel/ -rf
 }
 
 # aapanel 开心
@@ -60,7 +61,7 @@ red "好开心 ٩(ˊᗜˋ*)و."
 
 # 清理垃圾
 function clean-up-trash(){
-rm LinuxPanel_EN-6.8.23.zip aapanel-zh-CN.tar.gz aapanel-install.sh bt-uninstall.sh panel/ -rf
+rm LinuxPanel_EN-6.8.23.zip aapanel-zh-CN.tar.gz chinese.zip aapanel-install.sh bt-uninstall.sh panel/ -rf
 red "清理成功."
 red "如果想删除此脚本 请执行 rm aapanel.sh -rf "
 }
@@ -78,7 +79,16 @@ wget -O "/root/aapanel-zh-CN.tar.gz" "https://ghproxy.com/https://github.com/Aar
 tar -zxvf aapanel-zh-CN.tar.gz
 mv /root/server/panel/BTpanel/static/language/English/* /www/server/panel/BTPanel/static/language/English/
 mv /root/server/panel/config/menu.json /www/server/panel/config/
-rm rm /root/server/ -rf
+rm /root/server/ -rf
+/etc/init.d/bt restart
+red "汉化aaPanel成功."
+}
+
+function sinicization-gacjie(){
+# 汉化 来自 https://gitee.com/gacjie/aapanel_chinese 
+wget -O /root/chinese.zip https://ghproxy.com/https://github.com/AaronYES/aaPanel/releases/download/1.2/aapanel_chinese-6.8.21.zip
+unzip -o /root/chinese.zip -d /www/server/
+rm /root/chinese.zip -rf
 /etc/init.d/bt restart
 red "汉化aaPanel成功."
 }
@@ -88,14 +98,15 @@ function start_menu(){
     clear
     purple " 感谢使用aaPanel小助手."
     purple " https://github.com/AaronYES/aapanel"
-    yellow " =================================================="
+    yellow " ————————————————————————————————————————————————"
     green " 1. CentOS/Debian/Ubuntu 安装 aaPanel"
-    yellow " --------------------------------------------------"
+    yellow " ————————————————————————————————————————————————"
     green " 2. 降级 6.8.23 版本 aaPanel(官网)"
     green " 3. 降级 6.8.23 版本 aaPanel(GitHub仓库)"
     green " 4. 开心一下٩(ˊᗜˋ*)و"
-    green " 5. 汉化 aaPanel"
-    yellow " --------------------------------------------------"
+    green " 5. 汉化 aaPanel "
+    green " 6. 汉化 aaPanel (文件来自gitee汉化完整一些)"
+    yellow " ————————————————————————————————————————————————"
     green " 8. 卸载 aaPanel"
     green " 9. 清理脚本产生垃圾文件"
     green " 0. 退出脚本"
@@ -117,6 +128,9 @@ function start_menu(){
         ;;
         5 )
            sinicization
+        ;;
+        6 )
+           sinicization-gacjie
         ;;
         8 )
            uninstall

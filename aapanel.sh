@@ -35,7 +35,7 @@ cd /root/panel
 wget -O "/root/panel/downgrade.sh" "https://ghproxy.com/https://raw.githubusercontent.com/AaronYES/aapanel/main/downgrade.sh" 
 bash "/root/panel/downgrade.sh"
 red "降级成功."
-rm /root/panel/ -rf
+rm /root/LinuxPanel_EN-6.8.23.zip /root/panel/ -rf
 }
 
 # 降级aapanel GitHub下载 (最后一个无广告版本)
@@ -47,7 +47,7 @@ cd /root/panel
 wget -O "/root/panel/downgrade.sh" "https://ghproxy.com/https://raw.githubusercontent.com/AaronYES/aapanel/main/downgrade.sh" 
 bash "/root/panel/downgrade.sh"
 red "降级成功."
-rm /root/panel/ -rf
+rm /root/LinuxPanel_EN-6.8.23.zip /root/panel/ -rf
 }
 
 # aapanel 开心

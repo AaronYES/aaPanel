@@ -99,6 +99,14 @@ bash "/root/bt-uninstall.sh"
 red "卸载aaPanel成功."
 }
 
+# 删掉日志文件，并且锁定文件防止写入
+function log(){
+echo "" > /www/server/panel/script/site_task.py
+chattr +i /www/server/panel/script/site_task.py
+rm -rf /www/server/panel/logs/request/*
+chattr +i -R /www/server/panel/logs/request
+}
+
 # 汉化 sinicization
 function sinicization(){
 wget -O "/root/aapanel-zh-CN.tar.gz" "https://ghproxy.com/https://github.com/AaronYES/aapanel/releases/download/1.1/aapanel-zh-CN.tar.gz"
@@ -132,6 +140,7 @@ function start_menu(){
     green " 4. 降级 7.7.0  版本 宝塔面板(官网)"
     green " 5. 开心一下٩(ˊᗜˋ*)و"
     green " 6. 汉化 aaPanel (文件来自Gitee)"
+    green " 7. 删除日志文件，锁定文件写入权限"
     yellow " ————————————————————————————————————————————————"
     green " 8. 卸载 aaPanel"
     green " 9. 清理脚本产生垃圾文件"
@@ -157,6 +166,9 @@ function start_menu(){
         ;;
         6 )
            sinicization-gacjie
+        ;;
+        7 )
+           log
         ;;
         8 )
            uninstall

@@ -12,10 +12,10 @@ wget -O aapanel.sh https://ghproxy.com/https://raw.githubusercontent.com/AaronYE
 ```
 
 #### 功能介绍
-- 降级 'aapanel面板' 到最后一个无广告版本
-- 汉化 'aapanel面板'
-- 降级 '宝塔面板' 到 '7.7.0' 以及去除绑定
-- 开心 'aapanel' & '宝塔面板'
+- 降级`aapanel面板`到最后一个无广告版本
+- 汉化`aapanel面板`
+- 降级`宝塔面板`到`7.7.0`以及去除绑定
+- 开心`aapane`&`宝塔面板`
 
 ![bash](https://ghproxy.com/https://raw.githubusercontent.com/AaronYES/aapanel/main/resource/bash.png)
 

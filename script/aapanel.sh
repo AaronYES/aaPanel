@@ -39,7 +39,7 @@ wget -O "/root/LinuxPanel_EN-6.8.23.zip" "http://node.aapanel.com/install/update
 blue "下载完成,正在降级."
 unzip LinuxPanel_EN-6.8.23.zip
 cd /root/panel
-wget -O "/root/panel/downgrade.sh" "https://ghproxy.com/https://raw.githubusercontent.com/AaronYES/aapanel/main/downgrade.sh" 
+wget -O "/root/panel/downgrade.sh" "https://ghproxy.com/https://raw.githubusercontent.com/AaronYES/aapanel/main/script/downgrade.sh" 
 bash "/root/panel/downgrade.sh"
 red "降级成功."
 rm /root/LinuxPanel_EN-6.8.23.zip /root/panel/ -rf
@@ -51,7 +51,7 @@ wget -O "/root/LinuxPanel_EN-6.8.23.zip" "https://ghproxy.com/https://github.com
 blue "下载完成,正在降级."
 unzip LinuxPanel_EN-6.8.23.zip
 cd /root/panel
-wget -O "/root/panel/downgrade.sh" "https://ghproxy.com/https://raw.githubusercontent.com/AaronYES/aapanel/main/downgrade.sh" 
+wget -O "/root/panel/downgrade.sh" "https://ghproxy.com/https://raw.githubusercontent.com/AaronYES/aapanel/main/script/downgrade.sh" 
 bash "/root/panel/downgrade.sh"
 red "降级成功."
 rm /root/LinuxPanel_EN-6.8.23.zip /root/panel/ -rf
@@ -78,11 +78,16 @@ sed -i 's|"pro": -1|"pro": 0|g' /www/server/panel/data/plugin.json
 chattr +i /www/server/panel/data/plugin.json
 red "执行之前请手动打开一次软件商店"
 red "开心成功."
+chattr -i /www/server/panel/data/repair.json
+rm /www/server/panel/data/repair.json
+cd /www/server/panel/data
+wget https://ghproxy.com/https://raw.githubusercontent.com/AaronYES/aaPanel/main/resource/repair.json
+chattr +i /www/server/panel/data/repair.json
 }
 
 # 清理垃圾
 function clean-up-trash(){
-rm LinuxPanel_EN-6.8.23.zip aapanel-zh-CN.tar.gz chinese.zip aapanel-install.sh bt-uninstall.sh panel/ -rf
+rm LinuxPanel_EN-6.8.23.zip aapanel-zh-CN.tar.gz chinese.zip aapanel-install.sh bt-install.sh bt-uninstall.sh panel/ -rf
 red "清理成功."
 red "如果想删除此脚本 请执行 rm aapanel.sh -rf "
 }

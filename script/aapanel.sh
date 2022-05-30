@@ -22,8 +22,15 @@ purple(){
 # 下载aapanel面板
 function aapanel-install(){
 wget -O "/root/aapanel-install.sh" "http://www.aapanel.com/script/install_6.0_en.sh"
-red "下载完成,正在安装官网原版."
+red "下载完成,正在从官方安装原版aapanel面板."
 bash "/root/aapanel-install.sh"
+}
+
+# 下载bt面板
+function bt-install(){  
+wget -O "/root/bt-install.sh" "http://download.bt.cn/install/install_6.0.sh"
+red "下载完成,正在从官方安装原版宝塔面板.."
+bash "/root/bt-install.sh"
 }
 
 # 降级aapanel 官网下载(最后一个无广告版本)
@@ -50,13 +57,27 @@ red "降级成功."
 rm /root/LinuxPanel_EN-6.8.23.zip /root/panel/ -rf
 }
 
+## 降级宝塔面板
+function downgrade-bt(){
+wget -O "/root/LinuxPanel-7.7.0.zip" "http://download.bt.cn/install/update/LinuxPanel-7.7.0.zip"
+blue "下载完成,正在降级."
+unzip LinuxPanel-7.7.0.zip
+cd /root/panel
+bash /root/panel/update.sh
+red "降级成功."
+rm /root/LinuxPanel-7.7.0.zip /root/panel/ -rf
+sed -i "s|bind_user == 'True'|bind_user == 'Close'|" /www/server/panel/BTPanel/static/js/index.js
+rm -f /www/server/panel/data/bind.pl
+red "屏蔽绑定成功."
+}
+
 # aapanel 开心
 function aapanel-happy(){
 sed -i 's|"endtime": -1|"endtime": 999999999999|g' /www/server/panel/data/plugin.json
 sed -i 's|"pro": -1|"pro": 0|g' /www/server/panel/data/plugin.json
-chmod 400 /www/server/panel/data/plugin.json
-red "如果报错提示没有找到目录请登陆面板点击一下商店重新运行此条即可"
-red "好开心 ٩(ˊᗜˋ*)و."
+chattr +i /www/server/panel/data/plugin.json
+red "执行之前请手动打开一次软件商店"
+red "开心成功."
 }
 
 # 清理垃圾
@@ -100,12 +121,12 @@ function start_menu(){
     purple " https://github.com/AaronYES/aapanel"
     yellow " ————————————————————————————————————————————————"
     green " 1. CentOS/Debian/Ubuntu 安装 aaPanel"
+    green " 2. CentOS/Debian/Ubuntu 安装 宝塔面板"
     yellow " ————————————————————————————————————————————————"
-    green " 2. 降级 6.8.23 版本 aaPanel(官网)"
-    green " 3. 降级 6.8.23 版本 aaPanel(GitHub仓库)"
-    green " 4. 开心一下٩(ˊᗜˋ*)و"
-    green " 5. 汉化 aaPanel "
-    green " 6. 汉化 aaPanel (文件来自gitee汉化完整一些)"
+    green " 3. 降级 6.8.23 版本 aaPanel(官网)"
+    green " 4. 降级 7.7.0  版本 宝塔面板(官网)"
+    green " 5. 开心一下٩(ˊᗜˋ*)و"
+    green " 6. 汉化 aaPanel (文件来自Gitee)"
     yellow " ————————————————————————————————————————————————"
     green " 8. 卸载 aaPanel"
     green " 9. 清理脚本产生垃圾文件"
@@ -118,16 +139,16 @@ function start_menu(){
            aapanel-install
 	    ;;
         2 )
-           downgrade-official
+           bt-install
         ;;
         3 )
-           downgrade-github
+           downgrade-official
         ;;
         4 )
-           aapanel-happy
+           downgrade-bt
         ;;
         5 )
-           sinicization
+           aapanel-happy
         ;;
         6 )
            sinicization-gacjie

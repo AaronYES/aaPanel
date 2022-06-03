@@ -21,6 +21,9 @@ wget -O aapanel.sh https://ghproxy.com/https://raw.githubusercontent.com/AaronYE
 
 ## 更新日志
 
+### 2022年6月3日
+- 宝塔官网偷偷修改7.7.0版本文件导致无法降级，故上传了一份可用低版本
+
 ### 2022年5月30日
 - 修改脚本路径
 

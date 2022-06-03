@@ -59,7 +59,7 @@ rm /root/LinuxPanel_EN-6.8.23.zip /root/panel/ -rf
 
 ## 降级宝塔面板
 function downgrade-bt(){
-wget -O "/root/LinuxPanel-7.7.0.zip" "http://download.bt.cn/install/update/LinuxPanel-7.7.0.zip"
+wget -O "/root/LinuxPanel-7.7.0.zip" "https://ghproxy.com/https://github.com/AaronYES/aaPanel/releases/download/1.3/LinuxPanel-7.7.0.zip"
 blue "下载完成,正在降级."
 unzip LinuxPanel-7.7.0.zip
 cd /root/panel
@@ -137,7 +137,7 @@ function start_menu(){
     green " 2. CentOS/Debian/Ubuntu 安装 宝塔面板"
     yellow " ————————————————————————————————————————————————"
     green " 3. 降级 6.8.23 版本 aaPanel(官网)"
-    green " 4. 降级 7.7.0  版本 宝塔面板(官网)"
+    green " 4. 降级 7.7.0  版本 宝塔面板(备份)"
     green " 5. 开心一下٩(ˊᗜˋ*)و"
     green " 6. 汉化 aaPanel (文件来自Gitee)"
     green " 7. 删除日志文件，锁定文件写入权限"

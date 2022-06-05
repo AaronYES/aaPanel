@@ -20,11 +20,11 @@ purple(){
 }
 
 function English(){
-curl -L https://raw.githubusercontent.com/AaronYES/aaPanel/main/script/aapanel-en.sh  -o aapanel.sh && chmod +x aapanel.sh && ./aapanel.sh
+curl -L https://raw.githubusercontent.com/AaronYES/aaPanel/main/script/aapanel-en.sh  -o aapanel-en.sh && chmod +x aapanel-en.sh && ./aapanel-en.sh
 }
 
 function Chinese(){
-curl -L https://ghproxy.com/https://raw.githubusercontent.com/AaronYES/aaPanel/main/script/aapanel-zh.sh  -o aapanel.sh && chmod +x aapanel.sh && ./aapanel.sh
+curl -L https://ghproxy.com/https://raw.githubusercontent.com/AaronYES/aaPanel/main/script/aapanel-zh.sh  -o aapanel-zh.sh && chmod +x aapanel-zh.sh && ./aapanel-zh.sh
 }
 
 # 菜单

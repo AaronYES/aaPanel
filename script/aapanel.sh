@@ -40,7 +40,7 @@ function start_menu(){
     green " 0. 退出脚本｜Exit"
 
     echo
-    read -p "请输入数字｜Please key in numbers" menuNumberInput
+    read -p "请输入数字｜Please key in numbers：" menuNumberInput
     case "$menuNumberInput" in
         1 )
            English

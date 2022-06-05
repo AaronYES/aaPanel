@@ -1,38 +1,43 @@
-### aaPanel & 宝塔面板 小助手
+# aaPanel Tools
 
-## 使用方法
-#### 国外VPS
-```
+[English](https://github.com/AaronYES/aaPanel/blob/main/README.md)&nbsp;|&nbsp;[简体中文](https://github.com/AaronYES/aaPanel/blob/main/READM_zh.md)
+
+This tool is available for CentOS/Debian/Ubuntu clients for some of your own needs.
+
+## Function
+
+- Install aaPanel on CentOS/Debian/Ubuntu
+- Install BTPanel on CentOS/Debian/Ubuntu
+- Downgrade to aaPanel version 6.8.23
+- Downgrade to BTPanel version 7.7.0 
+- Crack
+- Change aaPanel language to Chinese
+- Delete log files, lock file write permissions
+- Uninstall the aaPanel panel
+- Cleanup script produces junk files
+
+## Usage
+
+~~~
 wget -O aapanel.sh https://raw.githubusercontent.com/AaronYES/aaPanel/main/script/aapanel.sh && chmod +x aapanel.sh && clear && ./aapanel.sh
-```
+~~~
 
-#### 国内VPS
-```
-wget -O aapanel.sh https://ghproxy.com/https://raw.githubusercontent.com/AaronYES/aaPanel/main/script/aapanel.sh && chmod +x aapanel.sh && clear && ./aapanel.sh
-```
 
-#### 功能介绍
-- 降级`aapanel面板`到最后一个无广告版本
-- 汉化`aapanel面板`
-- 降级`宝塔面板`到`7.7.0`以及去除绑定
-- 开心`aapane`&`宝塔面板`
+## Changelog
+### June 5, 2022
+- The official website address of the old version of aaPane has been modified, and the download path has been modified to the GitHub repository
 
-![bash](https://ghproxy.com/https://raw.githubusercontent.com/AaronYES/aapanel/main/resource/bash.png)
+### June 3, 2022
+- BTPanel secretly modifies the 7.7.0 version file so that it cannot be downgraded, and the download path is modified to the GitHub repository
 
-## 更新日志
+### May 30, 2022
+- Modify script path
 
-### 2022年6月3日
-- 宝塔官网偷偷修改7.7.0版本文件导致无法降级，故上传了一份可用低版本
+### May 17, 2022
+- Added pagoda panel downgrade
 
-### 2022年5月30日
-- 修改脚本路径
+### May 16, 2022
+- Make Chinese documents
 
-### 2022年5月17日
-- 将汉化文件更换为Gitee上找到的文件（想对我制作的更全一些）
-- 新增宝塔面板降级
-
-### 2022年5月16日
-- 制作汉化文件
-
-### 2022年5月15日
-- 完成脚本
+### May 15, 2022
+- Complete the script

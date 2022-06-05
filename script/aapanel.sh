@@ -136,8 +136,8 @@ function start_menu(){
     green " 1. CentOS/Debian/Ubuntu 安装 aaPanel"
     green " 2. CentOS/Debian/Ubuntu 安装 宝塔面板"
     yellow " ————————————————————————————————————————————————"
-    green " 3. 降级 6.8.23 版本 aaPanel(官网)"
-    green " 4. 降级 7.7.0  版本 宝塔面板(备份)"
+    green " 3. 降级 6.8.23 版本 aaPanel"
+    green " 4. 降级 7.7.0  版本 宝塔面板"
     green " 5. 开心一下٩(ˊᗜˋ*)و"
     green " 6. 汉化 aaPanel (文件来自Gitee)"
     green " 7. 删除日志文件，锁定文件写入权限"
@@ -156,7 +156,7 @@ function start_menu(){
            bt-install
         ;;
         3 )
-           downgrade-official
+           downgrade-github
         ;;
         4 )
            downgrade-bt

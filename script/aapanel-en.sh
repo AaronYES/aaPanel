@@ -139,7 +139,7 @@ function start_menu(){
            downgrade-bt
         ;;
         5 )
-           aapanel-happy
+           panel-happy
         ;;
         6 )
            sinicization-gacjie

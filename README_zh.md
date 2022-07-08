@@ -22,27 +22,3 @@
 ~~~
 wget https://raw.githubusercontent.com/AaronYES/aaPanel/main/script/aapanel.sh  -O aapanel.sh && chmod +x aapanel.sh && clear && ./aapanel.sh
 ~~~
-### 国内VPS
-~~~
-wget https://ghproxy.com/https://raw.githubusercontent.com/AaronYES/aaPanel/main/script/aapanel.sh  -O aapanel.sh && chmod +x aapanel.sh && clear && ./aapanel.sh
-~~~
-
-## 更新日志
-### 2022年6月5日
-- aaPane官网旧版本地址被修改，将下载路径修改为GitHub仓库
-
-### 2022年6月3日
-- 宝塔官网偷偷修改7.7.0版本文件导致无法降级，将下载路径修改为GitHub仓库
-
-### 2022年5月30日
-- 修改脚本路径
-
-### 2022年5月17日
-- 将汉化文件更换为Gitee上找到的文件（相对我制作的更全一些）
-- 新增宝塔面板降级
-
-### 2022年5月16日
-- 制作汉化文件
-
-### 2022年5月15日
-- 完成脚本
